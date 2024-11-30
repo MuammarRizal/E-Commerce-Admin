@@ -1,9 +1,5 @@
-import { Button } from "@/components/ui/button";
+import Home from "./(root)/page";
 
-export default function Home() {
-  return (
-    <Button className="rounded" variant="secondary">
-      Hello world
-    </Button>
-  );
+export default function page() {
+  return <Home />;
 }
