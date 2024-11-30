@@ -1,5 +1,6 @@
-import Home from './(root)/page';
+'use client';
+import SetupPage from './(root)/page';
 
 export default function page() {
-  return <Home />;
+  return <SetupPage />;
 }

@@ -1,31 +1,21 @@
 'use client';
 
-import { UserButton } from '@clerk/nextjs';
+import { StoreModal } from '@/components/modals/store-modal';
+import Modal from '@/components/ui/modal';
+import { useStoreModal } from '@/hooks/use-store-modal';
+import { useEffect } from 'react';
 
-const DotIcon = () => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 512 512"
-      fill="currentColor"
-    >
-      <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z" />
-    </svg>
-  );
+const SetupPage = (): JSX.Element => {
+  const onOpen = useStoreModal((state) => state.onOpen);
+  const isOpen = useStoreModal((state) => state.isOpen);
+
+  useEffect(() => {
+    if (!isOpen) {
+      onOpen();
+    }
+  }, [isOpen, onOpen]);
+
+  return <div className="container p-4">Root page</div>;
 };
 
-export default function Home() {
-  return (
-    <header>
-      <UserButton>
-        <UserButton.MenuItems>
-          <UserButton.Action
-            label="Open chat"
-            labelIcon={<DotIcon />}
-            onClick={() => alert('init chat')}
-          />
-        </UserButton.MenuItems>
-      </UserButton>
-    </header>
-  );
-}
+export default SetupPage;
