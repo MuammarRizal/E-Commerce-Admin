@@ -1,0 +1,30 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo '🚀🚀🚀Styling, testing and building your project before committing'
+
+# Check pritter standards
+npm run check-format || 
+(
+    echo '🤮🤮🤮Its forking raw - Your styling looks disgusting. 
+        Prettier check failed. yarn format or npm run format, add changes and try commit again';
+    false;
+)
+echo '😍GREAT! you have successfully passed the prettier standards'
+
+# Check tsconfig standards
+npm run check-types ||
+(
+    echo '☠️☠️☠️failed type check.
+        Are you seriously trying to write that ? make the change required above'
+    false;
+)
+echo '😍PERFECT! keep like that!'
+
+# Check ESLint Standards
+npm run lint || 
+(
+    echo '☠️☠️☠️Get that weak shit out of here! Eslint check failed. make the required changes listed above, add change and try to commit again'
+    false; 
+)
+echo '😍EXCELENT! and yes you made it through again'

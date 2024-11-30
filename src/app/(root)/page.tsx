@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { UserButton } from "@clerk/nextjs";
+import { UserButton } from '@clerk/nextjs';
 
 const DotIcon = () => {
   return (
@@ -22,7 +22,7 @@ export default function Home() {
           <UserButton.Action
             label="Open chat"
             labelIcon={<DotIcon />}
-            onClick={() => alert("init chat")}
+            onClick={() => alert('init chat')}
           />
         </UserButton.MenuItems>
       </UserButton>
