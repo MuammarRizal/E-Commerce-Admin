@@ -3,6 +3,7 @@
 import { StoreModal } from '@/components/modals/store-modal';
 import Modal from '@/components/ui/modal';
 import { useStoreModal } from '@/hooks/use-store-modal';
+import { UserButton } from '@clerk/nextjs';
 import { useEffect } from 'react';
 
 const SetupPage = (): JSX.Element => {
@@ -15,7 +16,11 @@ const SetupPage = (): JSX.Element => {
     }
   }, [isOpen, onOpen]);
 
-  return <div className="container p-4">Root page</div>;
+  return (
+    <div className="container p-4">
+      <UserButton />
+    </div>
+  );
 };
 
 export default SetupPage;
