@@ -64,3 +64,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.bg-auth {
+  object-fit: fill;
+}

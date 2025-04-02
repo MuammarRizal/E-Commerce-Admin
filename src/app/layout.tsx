@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import './globals.css';
+import '../styles/globals.css';
 import { ClerkProvider } from '@clerk/nextjs';
 import { ModalProvider } from '@/provider/modal.provider';
 
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider afterSignOutUrl={'/sign-in'}>
       <html lang="en">
         <body className={inter.className}>
           <ModalProvider />
